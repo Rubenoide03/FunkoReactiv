@@ -15,6 +15,8 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     implementation("io.projectreactor:reactor-core:3.5.10")
+    implementation("org.slf4j:slf4j-api:2.0.9")
+
 
 
 

@@ -51,10 +51,15 @@ public class FunkoServices {
     }
 
     public Flux<Map<List<MyFunko>, Long>> numStitchList() {
-        return Flux.just(funkos.stream()
-                .filter(myFunko -> myFunko.nombre().contains("Stitch"))
-                .collect(Collectors.groupingBy(MyFunko::nombre, Collectors.counting())));
+            return Flux.just(funkos.stream()
+                    .filter(funko -> funko.nombre().contains("Stitch"))
+                    .toList()
+                    .collect(Collectors.groupingBy(MyFunko::nombre, Collectors.counting())));
+        }
     }
+
+
+
 
 
 }
