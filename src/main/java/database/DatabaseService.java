@@ -23,7 +23,7 @@ public class DatabaseService {
 
     ConnectionFactoryOptions options = ConnectionFactoryOptions.builder()
             .option(ConnectionFactoryOptions.DRIVER, "h2")
-            .option(ConnectionFactoryOptions.PROTOCOL, "mem")
+            .option(ConnectionFactoryOptions.PROTOCOL, "tcp")
             .option(ConnectionFactoryOptions.HOST, "localhost")
             .option(ConnectionFactoryOptions.PORT, 3306)
             .option(ConnectionFactoryOptions.USER, "ruben")
