@@ -16,7 +16,8 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     implementation("io.projectreactor:reactor-core:3.5.10")
     implementation("org.slf4j:slf4j-api:2.0.9")
-
+    implementation("io.r2dbc:r2dbc-h2:1.0.0.RELEASE")
+    implementation ("com.h2database:h2")
 
 
 

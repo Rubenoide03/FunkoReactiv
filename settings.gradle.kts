@@ -1,2 +1,2 @@
-rootProject.name = "FunkoAsinc"
+rootProject.name = "FunkoReactiv"
 
