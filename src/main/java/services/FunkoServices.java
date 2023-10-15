@@ -18,7 +18,15 @@ import java.util.stream.Collectors;
 public class FunkoServices {
     private static FunkoServices instance;
     //read all csv
-    private List<MyFunko> funkos = readAllCSV("src/main/resources/funkos.csv").collectList().block();
+    private List<MyFunko> funkos;
+
+        {
+            try {
+                funkos = readAllCSV("src/main/resources/funkos.csv").collectList().block();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 
     private FunkoServices() {
 
@@ -32,7 +40,12 @@ public class FunkoServices {
     }
 
     public Mono<MyFunko> funkoMasCaro() {
-        return Mono.just(funkos.stream().max(Comparator.comparing(MyFunko::precio)).get());
+        try{
+            return Mono.just(funkos.stream().max(Comparator.comparing(MyFunko::precio)).get());
+        }catch (Exception e){
+            throw new RuntimeException(e);
+        }
+
 
 
     }
