@@ -1,5 +1,5 @@
-DROP TABLE funko CASCADE;
-CREATE TABLE IF NOT EXISTS funko (
+DROP TABLE funkos CASCADE;
+CREATE TABLE IF NOT EXISTS funkos (
                                      id BIGINT PRIMARY KEY AUTO_INCREMENT,
                                      cod UUID DEFAULT RANDOM_UUID() NOT NULL,
                                      nombre VARCHAR(255),

@@ -54,6 +54,8 @@ public class FunkoServices {
     public Flux<List<MyFunko>> funkosLanzados2023() {
         return Flux.just(funkos.stream().filter(myFunko -> myFunko.fecha().getYear() == 2023).toList());
     }
+
+
     public Flux<MyFunko> readAllCSV(String route_file) {
         try {
             List<String> lines = Files.readAllLines(Paths.get(route_file), StandardCharsets.UTF_8);

@@ -38,25 +38,7 @@ public class DatabaseService {
         connectionMono.flatMapMany(connection -> connection.createStatement(query).execute())
                 .subscribe(result -> logger.info(operation + " La operacion ha sido un exito"));
     }
-    public void insert(String query) {
-        executeQuery(query, "INSERT");
-    }
 
-    public void select(String query) {
-        executeQuery(query, "SELECT");
-    }
-
-    public void update(String query) {
-        executeQuery(query, "UPDATE");
-    }
-
-    public void delete(String query) {
-        executeQuery(query, "DELETE");
-    }
-
-    public void  create(String query) {
-        executeQuery(query, "CREATE");
-    }
 
 
 
