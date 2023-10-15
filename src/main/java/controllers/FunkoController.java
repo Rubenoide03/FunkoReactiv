@@ -1,23 +1,12 @@
 package controllers;
-
-import models.ModeloF;
-import models.MyFunko;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-
-import java.time.LocalDate;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.stream.Collectors;
+import services.FunkoServices;
 
 public class FunkoController {
     private static FunkoController instance;
-    List<MyFunko> funkos;
+    private FunkoServices funkoServices;
 
     private FunkoController() {
-
+        funkoServices = FunkoServices.getInstance();
     }
 
     public static FunkoController getInstance() {
@@ -27,38 +16,30 @@ public class FunkoController {
         return instance;
     }
 
-    public Mono<MyFunko> funkoMasCaro() {
-        return Mono.just(funkos.stream().max(Comparator.comparing(MyFunko::precio)).get());
-
-
+    public void funkoMasCaro() {
+        funkoServices.funkoMasCaro().subscribe(System.out::println);
     }
 
-    public Mono<Double> precioMedio() {
-        return Mono.just(funkos.stream().mapToDouble(MyFunko::precio).average().getAsDouble());
-    }
-    public Flux<Map<ModeloF,List<MyFunko>>> funkosPorModelo(){
-        return Flux.just(funkos.stream().collect(Collectors.groupingBy(MyFunko::modelo)));
-    }
-    //numero de funkos por modelos
-    public Flux<Map<ModeloF,Long>> numerodeFunkosPorModelo(){
-        return Flux.just(funkos.stream().collect(Collectors.groupingBy(MyFunko::modelo,Collectors.counting())));
-
-    }
-    /*
-
-
-     */
-    public Flux<List<MyFunko>> funkosLanzados2023(){
-        return Flux.just(funkos.stream().filter(myFunko -> myFunko.fecha().getYear()==2023).toList());
+    public void precioMedio() {
+        funkoServices.precioMedio().subscribe(System.out::println);
     }
 
-    public Flux<Map<List<MyFunko>, Long>> numStitchList() {
-        return Flux.just(
-                funkos.stream()
-                        .filter(funko -> funko.modelo().equals("Stitch")).toList().stream()
-                        .collect(Collectors.groupingBy(MyFunko::modelo, Collectors.counting())
-                        ));
+    public void funkosPorModelo() {
+        funkoServices.funkosPorModelo().subscribe(System.out::println);
     }
+
+    public void numerodeFunkosPorModelo() {
+        funkoServices.numerodeFunkosPorModelo().subscribe(System.out::println);
+    }
+
+    public void funkosLanzados2023() {
+        funkoServices.funkosLanzados2023().subscribe(System.out::println);
+    }
+
+    public void numStitchList() {
+        funkoServices.numStitchList().subscribe(System.out::println);
+    }
+
 
 
 }

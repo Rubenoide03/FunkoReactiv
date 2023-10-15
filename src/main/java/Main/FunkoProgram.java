@@ -1,6 +1,6 @@
 package Main;
 
-import controllers.FunkoController;
+import services.FunkoServices;
 
 public class FunkoProgram {
     FunkoProgram instance;
@@ -17,7 +17,7 @@ public class FunkoProgram {
 
     }
     private void printConsoleData(){
-        FunkoController funkoController=FunkoController.getInstance();
+        FunkoServices funkoController= FunkoServices.getInstance();
         System.out.println("Funko mas caro"+funkoController.funkoMasCaro());
         System.out.println("Funkos ordenador por modelo"+funkoController.funkosPorModelo());
     }
