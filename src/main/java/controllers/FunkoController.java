@@ -47,6 +47,10 @@ public class FunkoController {
         funkoServices.numerodeFunkosPorModelo().subscribe(System.out::println);
         System.out.println("Funkos lanzados en 2023: ");
         funkoServices.funkosLanzados2023().subscribe(System.out::println);
+        System.out.println("Lista de Stitches: ");
+        funkoServices.funkosStitch().subscribe(System.out::println);
+        System.out.println("Numero de Stitches ");
+        funkoServices.numeroFunkosStitch().subscribe(System.out::println);
 
     }
 

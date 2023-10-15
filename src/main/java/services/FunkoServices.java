@@ -67,6 +67,15 @@ public class FunkoServices {
     public Flux<List<MyFunko>> funkosLanzados2023() {
         return Flux.just(funkos.stream().filter(myFunko -> myFunko.fecha().getYear() == 2023).toList());
     }
+    //Numero de funkos de Stitch y listado de ellos
+    public Flux<List<MyFunko>> funkosStitch() {
+        return Flux.just(funkos.stream().filter(myFunko -> myFunko.nombre().equals("Stitch")).toList());
+
+
+    }
+    public Mono<Long> numeroFunkosStitch() {
+        return Mono.just(funkos.stream().filter(myFunko -> myFunko.nombre().equals("Stitch")).count());
+    }
 
 
     public Flux<MyFunko> readAllCSV(String route_file) {

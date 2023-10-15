@@ -93,6 +93,13 @@ class FunkoServicesTest {
         assertEquals(funkos.stream().filter(myFunko -> myFunko.fecha().getYear() == 2023).toList(), funkoServicesMock.funkosLanzados2023().blockFirst());
 
     }
+    @Test
+    void listFunkosStitch(){
+        funkos.add(new MyFunko(UUID.randomUUID(), "Stitch", ModeloF.DISNEY, 45.0, LocalDate.now(), LocalDateTime.now(), LocalDateTime.now()));
+
+
+    }
+
 
     @Test
     void readAllCSV() {
