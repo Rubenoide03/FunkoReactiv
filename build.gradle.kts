@@ -18,7 +18,7 @@ dependencies {
     implementation("org.slf4j:slf4j-api:2.0.9")
     implementation("io.r2dbc:r2dbc-h2:1.0.0.RELEASE")
     implementation("io.r2dbc:r2dbc-pool:1.0.0.RELEASE")
-    annotationProcessor("io.r2dbc:r2dbc-pool")
+    annotationProcessor("io.r2dbc:r2dbc-pool:1.0.0.RELEASE")
     testImplementation("io.r2dbc:r2dbc-pool")
     implementation ("com.h2database:h2")
     testImplementation("org.mockito:mockito-core:5.6.0")

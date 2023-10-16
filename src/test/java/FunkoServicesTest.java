@@ -94,6 +94,8 @@ class FunkoServicesTest {
     @Test
     void listFunkosStitch(){
         funkos.add(new MyFunko(UUID.randomUUID(), "Stitch", ModeloF.DISNEY, 45.0, LocalDate.now(), LocalDateTime.now(), LocalDateTime.now()));
+        FunkoServices funkoServicesMock = spy(FunkoServices.getInstance());
+        when(funkoServicesMock.funkosStitch()).thenReturn(Flux.just(funkos.stream().filter(myFunko -> myFunko.nombre().contains("Stitch")).toList()));
 
 
     }

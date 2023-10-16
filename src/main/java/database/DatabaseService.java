@@ -4,9 +4,9 @@ import io.r2dbc.spi.Connection;
 import io.r2dbc.spi.ConnectionFactories;
 import io.r2dbc.spi.ConnectionFactory;
 import io.r2dbc.spi.ConnectionFactoryOptions;
+import org.reactivestreams.Publisher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import reactor.core.publisher.Mono;
 
 public class DatabaseService {
     private static DatabaseService controller;
@@ -33,11 +33,12 @@ public class DatabaseService {
 
 
     ConnectionFactory connectionFactory = ConnectionFactories.get(options);
-    Mono<Connection> connectionMono = Mono.from(connectionFactory.create());
-    public void executeQuery(String query, String operation) {
-        connectionMono.flatMapMany(connection -> connection.createStatement(query).execute())
-                .subscribe(result -> logger.info(operation + " La operacion ha sido un exito"));
+
+    public Publisher<? extends Connection> getConnection() {
+        return connectionFactory.create();
     }
+
+
 
 
 

@@ -15,7 +15,10 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class FunkoServices {
+import repositories.FunkoRepository;
+import utils.CurrencyDateUtilFormatter;
+
+public class FunkoServices extends FunkoRepository {
     private static FunkoServices instance;
     //read all csv
     private List<MyFunko> funkos;
@@ -69,12 +72,12 @@ public class FunkoServices {
     }
     //Numero de funkos de Stitch y listado de ellos
     public Flux<List<MyFunko>> funkosStitch() {
-        return Flux.just(funkos.stream().filter(myFunko -> myFunko.nombre().equals("Stitch")).toList());
+        return Flux.just(funkos.stream().filter(myFunko -> myFunko.nombre().contains("Stitch")).toList());
 
 
     }
     public Mono<Long> numeroFunkosStitch() {
-        return Mono.just(funkos.stream().filter(myFunko -> myFunko.nombre().equals("Stitch")).count());
+        return Mono.just(funkos.stream().filter(myFunko -> myFunko.nombre().contains("Stitch")).count());
     }
 
 
@@ -96,6 +99,7 @@ public class FunkoServices {
                     LocalDateTime updatedAt = LocalDateTime.now();
                     MyFunko myFunko = new MyFunko(cod, nombre, modelo, precio, fecha, createdAt, updatedAt);
                     funkos.add(myFunko);
+
                 }
             }
 

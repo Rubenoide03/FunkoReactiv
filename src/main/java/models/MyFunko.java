@@ -2,10 +2,12 @@ package models;
 
 import lombok.Builder;
 import lombok.Data;
+import utils.CurrencyDateUtilFormatter;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
+
 
 @Builder
 public record MyFunko(UUID cod, String nombre, ModeloF modelo, double precio, LocalDate fecha, LocalDateTime created_at,
@@ -19,10 +21,10 @@ public record MyFunko(UUID cod, String nombre, ModeloF modelo, double precio, Lo
                 "cod=" + cod +
                 ", nombre='" + nombre + '\'' +
                 ", modelo=" + modelo +
-                ", precio=" + precio +
-                ", fecha=" + fecha +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
+                ", precio=" + CurrencyDateUtilFormatter.formatLocalCurrency(precio) +
+                ", fecha=" + CurrencyDateUtilFormatter.formatLocalDate(fecha)  +
+                ", created_at=" + CurrencyDateUtilFormatter.formatLocalDateTime(created_at)  +
+                ", updated_at=" + CurrencyDateUtilFormatter.formatLocalDateTime(updated_at) +
                 '}';
     }
 }

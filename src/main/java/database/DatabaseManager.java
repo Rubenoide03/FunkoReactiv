@@ -47,7 +47,7 @@ public class DatabaseManager {
             Properties properties = new Properties();
             properties.load(new FileInputStream(ClassLoader.getSystemResource("database.properties").getFile()));
             url = properties.getProperty("db.stringDB");
-            initTables = Boolean.parseBoolean(properties.getProperty("db.loadTables", "false"));
+            initTables = Boolean.parseBoolean(properties.getProperty("db.loadTables", "true"));
         } catch (Exception e) {
             logger.error("Error al cargar el fichero de propiedades ", e);
         }
