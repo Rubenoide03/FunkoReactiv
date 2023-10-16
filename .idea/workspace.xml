@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08a56ce7-f54e-4bd5-8a53-22fd46ef9bc9" name="Changes" comment="Initial commit">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
@@ -17,6 +18,9 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/funkos.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/funkos.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/MyFunko.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/MyFunko.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,10 +119,14 @@
       <updated>1696355842991</updated>
       <workItem from="1696355844008" duration="759000" />
       <workItem from="1696356626328" duration="2541000" />
+<<<<<<< Updated upstream
       <workItem from="1696678293145" duration="796000" />
       <workItem from="1696681655376" duration="678000" />
       <workItem from="1696684984874" duration="8275000" />
       <workItem from="1696771404920" duration="5598000" />
+=======
+      <workItem from="1696867236647" duration="692000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1696356461454</created>
