@@ -1,5 +1,3 @@
-package test;
-
 import models.ModeloF;
 import models.MyFunko;
 import org.junit.jupiter.api.BeforeEach;
