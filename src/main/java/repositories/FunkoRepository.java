@@ -29,8 +29,8 @@ public class FunkoRepository {
         }
     };
 
-    private FunkoRepository(DatabaseManager databaseManager) {
-        this.connectionFactory = databaseManager.getConnectionPool();
+    public FunkoRepository(DatabaseManager databaseManager) {
+        connectionFactory = databaseManager.getConnectionPool();
     }
 
 

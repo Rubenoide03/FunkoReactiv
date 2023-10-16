@@ -1,5 +1,6 @@
 package services;
 
+import database.DatabaseManager;
 import models.ModeloF;
 import models.MyFunko;
 import reactor.core.publisher.Flux;
@@ -32,8 +33,9 @@ public class FunkoServices extends FunkoRepository {
         }
 
     private FunkoServices() {
-
+        super(DatabaseManager.getInstance());
     }
+
 
     public static FunkoServices getInstance() {
         if (instance == null) {
